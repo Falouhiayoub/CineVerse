@@ -11,7 +11,7 @@ return (
             <div className="movie-info">
                 <div className="rating">⭐ 8.2 / 10</div>
                 <div className="meta-line">
-                    <span className="year">2025</span>|
+                    <span className="year">2028</span>|
                     <span className="category">Drama</span>|
                     <span className="country">USA</span>
                 </div>
