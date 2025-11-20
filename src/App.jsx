@@ -7,11 +7,6 @@ import "./index.css";
 function App() {
   return (
     <BrowserRouter>
-      <nav className="navbar">
-        <Link to="/">Accueil</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Details />} />
