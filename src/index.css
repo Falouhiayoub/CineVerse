@@ -1,174 +1,4 @@
-/* Navbar and details */
 
-/* @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;800&display=swap");
-:root{
-  --bg: #0C2B4E;
-  --card: rgba(255,255,255,0.04); 
-  --muted: rgba(255,255,255,0.75);
-  --highlight: #E6FF00; 
-} */
-
-*{
-    box-sizing:border-box
-}
-html,body, #root{
-    height:100%;
-    margin: 0;
-}
-  body {
-    font-family: "League Spartan", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: var(--bg);
-    color:#ffffff;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    padding:32px;
-    padding-top: 10px;
-    position:relative; /* stacking context for blurred bg */
-    z-index:0;
-  }
-  /* Blurred fixed background layer. Replace the URL with your image file. */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:  url('../public/backgroundimg.jpg');
-    background-size: cover;
-    filter: blur(5px) saturate(1.05);
-    transform: scale(1.04);
-    z-index:0;
-    pointer-events:none;
-}  
-
-.movie-page{
-  max-width:900px;
-  margin:0 auto;
-  position:relative;
-  z-index:1; /* keep content above blurred background */
-  text-align: center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height: calc(100vh - 64px);
-}
-/* Navbar styles (transparent) */
-.site-nav{
-  width:100%;
-  background:transparent;
-  position:relative;
-  z-index:3; /* above blurred bg and content */
-}
-.site-nav .nav-inner{
-  max-width:1100px;
-  margin:auto;
-  padding:10px 32px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.site-nav .logo{
-  color:#ffffff; /* logo white */
-  font-weight:800;
-  font-size:20px;
-  letter-spacing:0.6px;
-}
-.site-nav .contact-btn{
-  display:inline-block;
-  background:#ffffff; /* white background */
-  color: var(--bg); /* #0C2B4E text color */
-  padding:8px 14px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
-}
-.site-nav .contact-btn:hover{
-  opacity:0.95;
-}
-  .movie-card{
-    display:flex;
-    gap:28px;
-    background-color: #0C2B4E;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 8px 24px rgba(2,6,23,0.5);
-    border:1px solid rgba(255,255,255,0.06);
-    align-items:flex-start;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 760px;
-  }
-.movie-media{
-  position:relative;
-  width:180px; 
-  flex:0 0 180px;
-}
-  .poster{
-    display:block;
-    width:180px;
-    height:270px;
-    object-fit:cover;
-    border-radius:10px;
-    border:3px solid rgba(255,255,255,0.06);
-    box-shadow:0 12px 30px rgba(2,6,23,0.6);
-  }
-.poster-caption{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,6,23,0.6) 100%);
-  color:#fff;
-  padding:10px;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-}
-.movie-info{
-  flex:1 1 auto;
-  display:flex;
-  flex-direction:column;
-  align-items:center; 
-  text-align:center;
-}
-  .rating{
-    font-size:40px;
-    font-weight:900;
-    color: #ffffff; 
-    margin-bottom:8px;
-  }
-
-  .meta-line{
-    margin-top:auto; 
-    display:flex;
-    gap:12px;
-    align-items:center;
-    color:var(--muted);
-    font-size:14px;
-    padding-top:12px;
-    border-top:1px dashed rgba(255,255,255,0.08);
-    justify-content:center;
-  }
-.meta-line .year,
-.meta-line .country{
-  color:var(--highlight);
-  font-weight:700;
-}
-  .description{
-    margin:14px 0 0 0;
-    color:#ffffff;
-    line-height:1.7;
-    max-width:520px;
-    font-size:15px;
-    font-weight:600;
-  }
-.movie-actors-below{
-  margin:10px 0 0 0;
-  text-align:center;
-  color:#ffea00;
-  font-size:13px;
-  font-weight:700;
-}
-.acteurs{
-    color: white;
-}
 
 /* CONTACT SECTION */
 .contact-section {
@@ -267,13 +97,39 @@ body::before{
 .social-icons a:hover {
   color: #ffffff;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
+ .banner img {
+  width: 100%;
+  height: 200px;       /* horizontal large shape */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 20px;
 }
 
+/* Category title */
+.category h2 {
+  color: white;       /* only color allowed */
+  margin: 10px 0;
+  font-size: 24px;
+}
 
+/* Movies list */
+.movies-row {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
+.movies-row img {
+  flex: 0 0 calc((100% - 64px) / 5);
+  width: calc((100% - 64px) / 5);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 120px;
+  max-width: 220px;
+}
