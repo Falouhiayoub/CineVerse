@@ -7,7 +7,6 @@
   --muted: rgba(255,255,255,0.75);
   --highlight: #E6FF00; 
 } 
-
 *{
     box-sizing:border-box
 }
@@ -83,19 +82,7 @@ body::before{
 .site-nav .contact-btn:hover{
   opacity:0.95;
 }
-  .movie-card{
-    display:flex;
-    gap:28px;
-    background-color: #0C2B4E;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 8px 24px rgba(2,6,23,0.5);
-    border:1px solid rgba(255,255,255,0.06);
-    align-items:flex-start;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 760px;
-  }
+
 .movie-media{
   position:relative;
   width:180px; 
@@ -252,57 +239,75 @@ body::before{
   font-size: 25px;
   color: rgba(255,255,255,0.8);
 }
-
-.social-icons {
-  margin-top: 20px;
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 20px;
+  margin-top: 80px;
+ 
 }
-
-.social-icons a {
-  margin-right: 12px;
-  color: #E6FF00;
-  font-size: 20px;
-  transition: 0.2s;
-}
-
-.social-icons a:hover {
-  color: #ffffff;
-}
- .banner img {
+.movie-card {
   width: 100%;
-  height: 200px;       /* horizontal large shape */
-  object-fit: cover;
+  padding: 10px;
   border-radius: 10px;
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* Category title */
-.category h2 {
-  color: white;       /* only color allowed */
-  margin: 10px 0;
-  font-size: 24px;
-}
-
-/* Movies list */
-.movies-row {
-  display: flex;
-  gap: 16px;
-  padding-bottom: 10px;
-  overflow: hidden;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.movies-row img {
-  flex: 0 0 calc((100% - 64px) / 5);
-  width: calc((100% - 64px) / 5);
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
   cursor: pointer;
-  min-width: 120px;
-  max-width: 220px;
+  overflow: hidden;
 }
+.movie-card:hover {
+  transform: scale(1.05);
+}
+.movie-card img {
+  width: 150px;
+  height: 250px;
+  border-radius: 10px;
+  
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0); /* Transparent */
+  backdrop-filter: blur(4px); /* Optional small blur */
+  z-index: 1000;
+  height: 50px;
+}
+
+.logo a {
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.movieCard{
+  display: flex;
+  align-items: center;
+  background-color: #0C2B4E;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+
+
 
 
 
