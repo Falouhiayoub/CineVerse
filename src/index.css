@@ -1,12 +1,12 @@
 /* Navbar and details */
 
-/* @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;800&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;800&display=swap");
 :root{
   --bg: #0C2B4E;
   --card: rgba(255,255,255,0.04); 
   --muted: rgba(255,255,255,0.75);
   --highlight: #E6FF00; 
-} */
+} 
 
 *{
     box-sizing:border-box
@@ -35,7 +35,7 @@ body::before{
     background-size: cover;
     filter: blur(5px) saturate(1.05);
     transform: scale(1.04);
-    z-index:0;
+    z-index:-1;
     pointer-events:none;
 }  
 
@@ -267,13 +267,43 @@ body::before{
 .social-icons a:hover {
   color: #ffffff;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
+ .banner img {
+  width: 100%;
+  height: 200px;       /* horizontal large shape */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 20px;
 }
+
+/* Category title */
+.category h2 {
+  color: white;       /* only color allowed */
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+/* Movies list */
+.movies-row {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.movies-row img {
+  flex: 0 0 calc((100% - 64px) / 5);
+  width: calc((100% - 64px) / 5);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 120px;
+  max-width: 220px;
+}
+
 
 
 
