@@ -178,6 +178,7 @@ body::before{
   justify-content: space-between;
 }
 
+
 /* Left side form */
 .contact-form {
   flex: 1;
